@@ -4,6 +4,11 @@
 
 // Interface Segregation Principle (ISP)
 
+class Lobbist {
+public:
+    virtual void wait() = 0;
+};
+
 class Worker {
 public:
     virtual void work() = 0;
@@ -25,7 +30,7 @@ public:
     }
 };
 
-class Waiter : public Worker, public Eater {
+class Waiter : public Worker, public Eater, public Lobbist {
 public:
     void work() override {
         std::cout << "Waiter is working." << std::endl;
@@ -33,5 +38,16 @@ public:
 
     void eat() override {
         std::cout << "Waiter is eating." << std::endl;
+    }
+
+    void wait() override {
+        std::cout << "Waiter is waiting." << std::endl;
+    }
+};
+
+class HR : public Lobbist {
+public:
+    void wait() override {
+        std::cout << "Sits and doesen't do anything as always :)" << std::endl;
     }
 };

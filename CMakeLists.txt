@@ -10,4 +10,7 @@ add_executable(Lab1 main.cpp
         ISP.h
         DIP.h
         Singleton.h
-        ObjectPooling.h)
+        ObjectPooling.h
+        Adapter.h
+        Decorator.h
+        Facade.h)

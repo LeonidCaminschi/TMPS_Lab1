@@ -9,6 +9,10 @@
 #include "Singleton.h"
 #include "ObjectPooling.h"
 
+#include "Adapter.h"
+#include "Decorator.h"
+#include "Facade.h"
+
 using namespace std;
 
 int main() {
@@ -47,6 +51,19 @@ int main() {
 
     engineer.work();
     waiter.eat();
+
+    // Adapter
+    Adapter bbb;
+    bbb.wait();
+
+    // Decorator
+    HR useless;
+    Hobo decoratedHobo(&useless);
+    decoratedHobo.wait();
+
+    // Facade
+    Facade aaa;
+    aaa.execute("c++");
 
     return 0;
 }
