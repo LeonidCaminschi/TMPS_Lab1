@@ -13,6 +13,9 @@
 #include "Decorator.h"
 #include "Facade.h"
 
+#include "Command.h"
+#include "Observer.h"
+
 using namespace std;
 
 int main() {
@@ -64,6 +67,28 @@ int main() {
     // Facade
     Facade aaa;
     aaa.execute("c++");
+
+    // Command
+    SalariedEmployee employee1;
+    SalariedEmployee employee2;
+
+    TaskCommand task1(&employee1);
+    TaskCommand task2(&employee2);
+
+    CEO ceo;
+    ceo.addCommand(&task1);
+    ceo.addCommand(&task2);
+
+    ceo.delegateTasks();
+
+    // Observer
+    Controller control;
+
+    ConcreteComponent observer1, observer2;
+    control.addComponent(&observer1);
+    control.addComponent(&observer2);
+
+    control.setState("Turn component On");
 
     return 0;
 }

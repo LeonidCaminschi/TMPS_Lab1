@@ -32,7 +32,6 @@ public:
         return new HourlyEmployee(MinimumPay);
     }
 
-
 private:
     float MinimumPay = 10;
 };
@@ -58,6 +57,10 @@ public:
 
     Employee* clone() const override {
         return new SalariedEmployee(HealthInsurance);
+    }
+
+    void doTask() {
+        std::cout << "Employee is performing the task." << std::endl;
     }
 private:
     bool HealthInsurance = true;

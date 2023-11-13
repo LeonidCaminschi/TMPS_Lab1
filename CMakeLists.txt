@@ -13,4 +13,6 @@ add_executable(Lab1 main.cpp
         ObjectPooling.h
         Adapter.h
         Decorator.h
-        Facade.h)
+        Facade.h
+        Command.h
+        Observer.h)
