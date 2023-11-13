@@ -10,7 +10,7 @@ public:
         return language;
     }
 
-    std::string setLanguage(std::string newlang) {
+    void setLanguage(std::string newlang) {
         language = newlang;
     }
 
@@ -29,7 +29,7 @@ public:
         return pattern;
     }
 
-    std::string setPattern(std::string newpat) {
+    void setPattern(std::string newpat) {
         pattern = newpat;
     }
 
@@ -46,10 +46,13 @@ private:
     DesignPatterns dp;
 public:
     void execute (std::string newnew) {
-        pl.setLanguage(newnew);
-        dp.setPattern(newnew);
-
-        pl.yourLanguage();
-        dp.yourPattern();
+        if (newnew == "c++") {
+            pl.setLanguage(newnew);
+            pl.yourLanguage();
+        }
+        else {
+            dp.setPattern(newnew);
+            dp.yourPattern();
+        }
     }
 };
